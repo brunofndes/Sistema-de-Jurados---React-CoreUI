@@ -22,24 +22,9 @@ const TheSidebar = () => {
   const show = useSelector(state => state.sidebarShow)
 
   return (
-    <CSidebar
-      show={show}
-      onShowChange={(val) => dispatch({type: 'set', sidebarShow: val })}
-    >
-      <CSidebarBrand className="d-md-down-none" to="/">
-        <CIcon
-          className="c-sidebar-brand-full"
-          name="logo-negative"
-          height={35}
-        />
-        <CIcon
-          className="c-sidebar-brand-minimized"
-          name="sygnet"
-          height={35}
-        />
-      </CSidebarBrand>
+       <CSidebar>
       <CSidebarNav>
-
+        <img src="/uninassau.png"/>
         <CCreateElement
           items={navigation}
           components={{
