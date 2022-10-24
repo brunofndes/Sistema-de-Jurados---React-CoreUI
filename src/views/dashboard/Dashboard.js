@@ -10,7 +10,8 @@ import {
   CCol,
   CProgress,
   CRow,
-  CCallout
+  CCallout,
+  CWidgetBrand
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
@@ -108,6 +109,19 @@ const Dashboard = () => {
       </CCard>
 
       <WidgetsBrand withCharts/>
+      <CCol sm="6" lg="3">
+      <CWidgetBrand
+        color="facebook"
+        rightHeader="EVENTO X"
+        rightFooter="LUCAS VIADO"
+        leftHeader="459"
+        leftFooter="feeds"
+      >
+        
+      </CWidgetBrand>
+    </CCol>
+
+
 
       <CRow>
         <CCol>
