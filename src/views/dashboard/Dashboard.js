@@ -27,7 +27,7 @@ const Dashboard = () => {
         <CCardBody>
           <CRow>
             <CCol sm="5">
-              <h4 id="traffic" className="card-title mb-0">Traffic</h4>
+              <h4 id="traffic" className="card-title mb-0">CU</h4>
               <div className="small text-muted">November 2017</div>
             </CCol>
             <CCol sm="7" className="d-none d-md-block">
@@ -41,7 +41,7 @@ const Dashboard = () => {
                       color="outline-secondary"
                       key={value}
                       className="mx-0"
-                      active={value === 'Month'}
+                      active={value === 'Year'}
                     >
                       {value}
                     </CButton>
@@ -71,7 +71,7 @@ const Dashboard = () => {
                 className="progress-xs mt-2"
                 precision={1}
                 color="info"
-                value={40}
+                value={20}
               />
             </CCol>
             <CCol md sm="12" className="mb-sm-2 mb-0">
