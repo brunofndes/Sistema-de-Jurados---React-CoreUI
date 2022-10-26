@@ -39,7 +39,7 @@ const Login = () => {
           setError(result.error);
         }
     }else {
-      setError('Please enter your email and password')
+      setError('Por favor entre com seu email e senha')
     }
   }
 
