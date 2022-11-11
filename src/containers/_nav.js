@@ -11,13 +11,13 @@ const _nav =  [
 },
 {
   _tag: 'CSidebarNavItem',
-  name: 'Avisos',
+  name: 'Cadastro de Competidor',
   to: '/wall',
   icon: 'cil-warning'
 },
 {
   _tag: 'CSidebarNavItem',
-  name: 'Documentos',
+  name: 'Regras',
   to: '/documents',
   icon: 'cil-file'
 },
