@@ -18,7 +18,7 @@ const TheSidebar = () => {
   return (
        <CSidebar>
       <CSidebarNav>
-        <img src="/uninassau.png"/>
+        <img src="/uninassau_share-removebg-preview.png"/>
         <CCreateElement
           items={navigation}
           components={{
