@@ -15,9 +15,11 @@ import { CButton,
    CTextarea,
    CLabel,
    CInput,
+   CSelect
   } from '@coreui/react';
 import CIcon from '@coreui/icons-react';
 import useApi from '../services/api';
+
 
 export default () => {
   const api = useApi();
@@ -32,7 +34,7 @@ export default () => {
 
   const fields = [
     {label: 'Nome do Competidor', key: 'title'},
-    {label: 'Nota', key: 'notas',  _style:{width:'200px'}, filter: true, sorter: true},
+    {label: 'Nota', key: 'notas',  _style:{width:'83px'}, filter: true, sorter: true},
     {label: 'Data de Criação', key: 'datecreated',  _style:{width:'200px'}},
     {label: 'Ações', key: 'actions' , _style:{width:'1px'},filter: false, sorter: false},
   ];
@@ -138,13 +140,19 @@ export default () => {
                   itemsPerPage={5}
                   scopedSlots={{
                     'notas': (item, index) => (
-                      <CInput
-               type= "number"
-               id="modal-title"
-               placeholder="Nota"
-               disabled = {modalLoading}
-               >
-              </CInput>
+                      <CSelect size="sm" className="mb-3" aria-label="Small select example">
+                           <option>Nota</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                      </CSelect>
                     ),
                     'actions': (item, index) => (
                       <td>
