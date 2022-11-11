@@ -25,6 +25,7 @@ export default () => {
   const [loading, setLoading] = useState(true);
   const [list, setList] = useState([]);
   const [showModal, setShowModal] = useState(false);
+  const [modalLoading , setModalLoading] = useState(false);
   const [modalTitleField, setModalTitleField] = useState('');
   const [modalBodyField, setModalBodyField] = useState('');
   const [modalId, setModalId] = useState('');
@@ -62,12 +63,38 @@ export default () => {
     setShowModal(true);
   }
 
+  const handleRemoveButton = async (index) => {
+    if(window.confirm('Tem certeza que deseja excluir?')){
+      const result = await api.removeWall(list[index]['id']);
+        if(result.error === ''){
+          getList();
+        }else{
+          alert(result.error)
+        }
+    }
+  }
+
+  const handleNewButton = () => {
+    setModalId('')
+    setModalTitleField('');
+    setModalBodyField('');
+    setShowModal(true);
+  }
+
   const handleModalSave = async () =>{
     if(modalTitleField && modalBodyField){
-      const result = await api.updateWall(modalId,{
+      setModalLoading(true)
+      let result;
+      let data ={
         title: modalTitleField,
-        body: modalBodyField
-      });
+          body: modalBodyField
+      }
+      if(modalId === ''){
+        result = await api.addWall(data);
+       }else {
+      result = await api.updateWall(modalId,data);
+      }
+      setModalLoading(false)
         if(result.error === ''){
           setShowModal(false);
           getList();
@@ -88,7 +115,10 @@ export default () => {
 
           <CCard>
             <CCardHeader>
-                <CButton color="primary">
+                <CButton
+                color="primary"
+                onClick={handleNewButton}
+                >
                   <CIcon name="cil-check"/>Novo Aviso
                 </CButton>
             </CCardHeader>
@@ -108,7 +138,7 @@ export default () => {
                       <td>
                         <CButtonGroup>
                           <CButton color="info" onClick={() =>handleEditButton(index)}>Editar</CButton>
-                          <CButton color="danger">Excluir</CButton>
+                          <CButton color="danger" onClick={() => handleRemoveButton(index)}>Excluir</CButton>
                         </CButtonGroup>
                       </td>
                     )
@@ -120,7 +150,7 @@ export default () => {
       </CRow>
 
       <CModal show={showModal} onClose={handleCloseModal}>
-        <CModalHeader closeButton>Editar Aviso</CModalHeader>
+        <CModalHeader closeButton>{modalId === '' ? 'Novo' : 'Editar'} Aviso</CModalHeader>
         <CModalBody>
           <CFormGroup>
             <CLabel htmlFor="modal-title">Título do Aviso</CLabel>
@@ -130,6 +160,7 @@ export default () => {
                placeholder="Digite um titulo para o aviso"
                value={modalTitleField}
                onChange={e=>setModalTitleField(e.target.value)}
+               disabled = {modalLoading}
                >
               </CInput>
           </CFormGroup>
@@ -141,6 +172,7 @@ export default () => {
                placeholder="Digite o conteudo do aviso"
                value={modalBodyField}
                onChange={e=>setModalBodyField(e.target.value)}
+               disabled = {modalLoading}
               />
 
           </CFormGroup>
@@ -150,11 +182,13 @@ export default () => {
           <CButton
           color="primary"
           onClick={handleModalSave}
-          >Salvar</CButton>
-
+          disabled = {modalLoading}
+          >
+            {modalLoading ? 'Carregando' : 'Salvar'}</CButton>
           <CButton
           color="secondary"
           onClick={handleCloseModal}
+          disabled = {modalLoading}
           >Cancelar</CButton>
         </CModalFooter>
       </CModal>
