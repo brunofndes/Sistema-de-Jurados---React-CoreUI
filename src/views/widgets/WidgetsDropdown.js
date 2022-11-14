@@ -6,21 +6,30 @@ import {
   CDropdown,
   CDropdownMenu,
   CDropdownItem,
-  CDropdownToggle
+  CDropdownToggle,
+  CButton
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import ChartLineSimple from '../charts/ChartLineSimple'
 import ChartBarSimple from '../charts/ChartBarSimple'
+import {useHistory} from 'react-router-dom';
 
 const WidgetsDropdown = () => {
+
+  const history = useHistory();
+  const handleClick = () => {
+    history.push('/wall')
+  }
+  
   // render
   return (
     <CRow>
       <CCol sm="6" lg="3">
-        <CWidgetDropdown
+      <CButton onClick={handleClick}  color='primary'>
+              <CWidgetDropdown        
           color="gradient-primary"
-          header="9.823"
-          text="Members online"
+          header="COSPLAY"
+          text="Fantasias"
           footerSlot={
             <ChartLineSimple
               pointed
@@ -45,12 +54,13 @@ const WidgetsDropdown = () => {
             </CDropdownMenu>
           </CDropdown>
         </CWidgetDropdown>
+        </CButton>
       </CCol>
 
       <CCol sm="6" lg="3">
-        <CWidgetDropdown
+        <CWidgetDropdown        
           color="gradient-info"
-          header="9.823"
+          header="K-POP"
           text="Members online"
           footerSlot={
             <ChartLineSimple
