@@ -58,6 +58,7 @@ const WidgetsDropdown = () => {
       </CCol>
 
       <CCol sm="6" lg="3">
+        <CButton onClick={handleClick}  color='primary'>
         <CWidgetDropdown        
           color="gradient-info"
           header="K-POP"
@@ -87,41 +88,11 @@ const WidgetsDropdown = () => {
             </CDropdownMenu>
           </CDropdown>
         </CWidgetDropdown>
-      </CCol>
+        </CButton>
+      </CCol>      
 
       <CCol sm="6" lg="3">
-        <CWidgetDropdown
-          color="gradient-warning"
-          header="9.823"
-          text="Members online"
-          footerSlot={
-            <ChartLineSimple
-              className="mt-3"
-              style={{height: '70px'}}
-              backgroundColor="rgba(255,255,255,.2)"
-              dataPoints={[78, 81, 80, 45, 34, 12, 40]}
-              options={{ elements: { line: { borderWidth: 2.5 }}}}
-              pointHoverBackgroundColor="warning"
-              label="Members"
-              labels="months"
-            />
-          }
-        >
-          <CDropdown>
-            <CDropdownToggle color="transparent">
-              <CIcon name="cil-settings"/>
-            </CDropdownToggle>
-            <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
-              <CDropdownItem>Another action</CDropdownItem>
-              <CDropdownItem>Something else here...</CDropdownItem>
-              <CDropdownItem disabled>Disabled action</CDropdownItem>
-            </CDropdownMenu>
-          </CDropdown>
-        </CWidgetDropdown>
-      </CCol>
-
-      <CCol sm="6" lg="3">
+        <CButton onClick={handleClick}  color='danger'>
         <CWidgetDropdown
           color="gradient-danger"
           header="9.823"
@@ -148,6 +119,7 @@ const WidgetsDropdown = () => {
             </CDropdownMenu>
           </CDropdown>
         </CWidgetDropdown>
+        </CButton>
       </CCol>
     </CRow>
   )
