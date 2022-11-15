@@ -11,8 +11,14 @@ import {
 import CIcon from '@coreui/icons-react'
 import ChartLineSimple from '../charts/ChartLineSimple'
 import ChartBarSimple from '../charts/ChartBarSimple'
+import { useHistory } from 'react-router-dom'
 
 const WidgetsDropdown = () => {
+  const history = useHistory();
+const handleClick = () =>{
+  history.push('theme/typography')
+}
+
   // render
   return (
     <CRow>
@@ -38,7 +44,7 @@ const WidgetsDropdown = () => {
               <CIcon name="cil-settings"/>
             </CDropdownToggle>
             <CDropdownMenu className="pt-0" placement="bottom-end">
-              <CDropdownItem>Action</CDropdownItem>
+              <CDropdownItem onClick={handleClick}>Action</CDropdownItem>
               <CDropdownItem>Another action</CDropdownItem>
               <CDropdownItem>Something else here...</CDropdownItem>
               <CDropdownItem disabled>Disabled action</CDropdownItem>
