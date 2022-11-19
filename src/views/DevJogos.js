@@ -114,7 +114,7 @@ export default () => {
     <>
       <CRow>
         <CCol>
-          <h2>Cadastro do K-Pop</h2>
+          <h2>Cadastro do Desenvolvimento de Jogos</h2>
 
           <CCard>
             <CCardHeader>

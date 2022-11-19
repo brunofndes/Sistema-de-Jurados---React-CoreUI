@@ -114,7 +114,7 @@ export default () => {
     <>
       <CRow>
         <CCol>
-          <h2>Cadastro de Competidor</h2>
+          <h2>Cadastro do Cosplay</h2>
 
           <CCard>
             <CCardHeader>

@@ -17,20 +17,28 @@ import { useHistory } from 'react-router-dom';
 const WidgetsDropdown = () => {
 
   const history = useHistory();
-  const handleClick = () => {
-    history.push('/wall')
+  const handleClickCosplay = () => {
+    history.push('/cosplay')
+  }
+
+  const handleClickKpop = () => {
+    history.push('/kpop')
+  }
+
+  const handleClickDevJogos = () => {
+    history.push('/devjogos')
   }
 
   // render
   return (
     <CRow>
       <CCol sm="6" lg="3">
-    
+
           <CWidgetDropdown
             color="gradient-primary"
             header="COSPLAY"
             text="Fantasias"
-			onClick={handleClick}
+			onClick={handleClickCosplay}
             footerSlot={
               <ChartLineSimple
                 pointed
@@ -55,16 +63,16 @@ const WidgetsDropdown = () => {
               </CDropdownMenu>
             </CDropdown> */}
           </CWidgetDropdown>
-       
+
       </CCol>
 
       <CCol sm="6" lg="3">
-        
+
           <CWidgetDropdown
             color="gradient-info"
             header="K-POP"
             text="Musicas "
-			onClick={handleClick}
+			onClick={handleClickKpop}
             footerSlot={
               <ChartLineSimple
                 pointed
@@ -90,16 +98,16 @@ const WidgetsDropdown = () => {
               </CDropdownMenu>
             </CDropdown> */}
           </CWidgetDropdown>
-       
+
       </CCol>
 
       <CCol sm="6" lg="3">
-      
+
           <CWidgetDropdown
             color="gradient-danger"
-            header="DES. JOGOS"
-            text="Gamer Players"
-			onClick={handleClick}
+            header="DES. DE JOGOS"
+            text="Gameplay"
+			onClick={handleClickDevJogos}
             footerSlot={
               <ChartBarSimple
                 className="mt-3 mx-3"
@@ -122,7 +130,7 @@ const WidgetsDropdown = () => {
               </CDropdownMenu>
             </CDropdown> */}
           </CWidgetDropdown>
-      
+
       </CCol>
     </CRow>
   )
