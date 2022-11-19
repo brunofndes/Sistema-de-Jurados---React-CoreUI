@@ -15,6 +15,16 @@ const _nav =  [
   to: '/wall',
   icon: 'cil-warning'
 },
+
+
+/* {
+  _tag: 'CSidebarNavItem',
+  name: 'Cadastro de Competidor',
+  to: '/wall1',
+  icon: 'cil-warning'
+},
+ */
+
 {
   _tag: 'CSidebarNavItem',
   name: 'Regras',

@@ -13,6 +13,9 @@ const routes = [
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/logout', name: 'Logout', component: Logout },
   { path: '/wall', name: 'Wall', component: Wall },
+  /* { path: '/cosplay', name: 'cosplay', component: cosplay },
+  { path: '/k-pop', name: 'k-pop', component: k-pop }, */
+
   { path: '/documents', name: 'Documents', component: Documents },
   { path: '/reservations', name: 'Reservations', component: Reservations },
 

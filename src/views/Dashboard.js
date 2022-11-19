@@ -26,9 +26,9 @@ const Dashboard = () => {
 
 {/*<CCard> ============== LINHAAAAAAA*/}
 
-      <CCard> 
+      {/* <CCard> 
         <CCardBody>
-          {/*<CRow>
+          <CRow>
             <CCol sm="5">
               <h4 id="traffic" className="card-title mb-0">CU</h4>
               <div className="small text-muted">November 2017</div>
@@ -52,11 +52,12 @@ const Dashboard = () => {
                 }
               </CButtonGroup>
             </CCol>
-          </CRow>*/}
+          </CRow>
           <MainChartExample style={{height: '300px', marginTop: '40px'}}/>
         </CCardBody>
+
         <CCardFooter>
-      {/*<CRow className="text-center">
+      <CRow className="text-center">
             <CCol md sm="12" className="mb-sm-2 mb-0">
               <div className="text-muted">Visits</div>
               <strong>29.703 Users (40%)</strong>
@@ -106,10 +107,10 @@ const Dashboard = () => {
                 value={40}
               />
             </CCol>
-        </CRow>*/}
+        </CRow>
         </CCardFooter>
-      </CCard>
-
+      </CCard> */}
+{/* ====================================== */}
       <WidgetsBrand withCharts/>
 
       <CRow>
