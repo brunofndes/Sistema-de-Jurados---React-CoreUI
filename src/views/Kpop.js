@@ -140,14 +140,19 @@ export default () => {
                   itemsPerPage={5}
                   scopedSlots={{
                     'notas': (item, index) => (
-                        <CInput
-                         type= "text"
-                         id="modal-title"
-                         placeholder="Nota"
-                         disabled = {modalLoading}
-                         >
-                        </CInput>
-
+                      <CSelect size="sm" className="mb-3" aria-label="Small select example">
+                           <option>Nota</option>
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                      </CSelect>
                     ),
                     'actions': (item, index) => (
                       <td>
@@ -181,41 +186,16 @@ export default () => {
           </CFormGroup>
 
           <CFormGroup>
-            <CLabel htmlFor="modal-title">Caracterização (3,0)</CLabel>
-              <CInput
-               type= "text"
-               id="modal-title"
-               placeholder=""
+            <CLabel htmlFor="modal-body">Observações do Julgamento</CLabel>
+              <CTextarea
+               id="modal-body"
+               placeholder="Digite o conteudo do aviso"
+               value={modalBodyField}
+               onChange={e=>setModalBodyField(e.target.value)}
                disabled = {modalLoading}
-               >
-              </CInput>
+              />
+
           </CFormGroup>
-
-          <CFormGroup>
-            <CLabel htmlFor="modal-title">Performance (4,0)</CLabel>
-              <CInput
-               type= "text"
-               id="modal-title"
-               placeholder=""
-               disabled = {modalLoading}
-               >
-              </CInput>
-          </CFormGroup>
-
-          <CFormGroup>
-            <CLabel htmlFor="modal-title">Harmônia (3,0)</CLabel>
-              <CInput
-               type= "text"
-               id="modal-title"
-               placeholder=""
-
-               disabled = {modalLoading}
-               >
-              </CInput>
-          </CFormGroup>
-
-
-
 
         </CModalBody>
         <CModalFooter>
